@@ -1,0 +1,78 @@
+{
+  "name": "next-starter-kit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint": "eslint --ext js,jsx,ts,tsx --fix --ignore-path .gitignore .",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
+    "format": "npm run prettier -- --write",
+    "format-check": "npm run prettier -- --list-different",
+    "validate": "npm-run-all --parallel type-check format-check lint build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@reach/alert": "^0.15.0",
+    "@supabase/supabase-js": "^1.15.1",
+    "@supabase/ui": "^0.27.3",
+    "add": "^2.0.6",
+    "classnames": "^2.3.1",
+    "easymde": "^2.15.0",
+    "next": "^11.0.1",
+    "next-seo": "^4.22.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-markdown": "^6.0.2",
+    "react-simplemde-editor": "^5.0.1",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
+    "@tailwindcss/jit": "^0.1.18",
+    "@tailwindcss/typography": "^0.4.1",
+    "@types/node": "^15.12.4",
+    "@types/react": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "autoprefixer": "^10.2.6",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-inline-react-svg": "^2.0.1",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-flowtype": "^5.7.2",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.5",
+    "prettier": "^2.3.1",
+    "tailwindcss": "^2.2.4",
+    "typescript": "^4.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "CI=1 npm-run-all --parallel type-check && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|ts|tsx)": [
+      "yarn run lint"
+    ],
+    "*.+(js|json|ts|tsx)": [
+      "yarn run format"
+    ]
+  }
+}
