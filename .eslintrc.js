@@ -27,7 +27,7 @@ module.exports = {
     // This rule is not compatible with Next.js's <Link /> components
     'jsx-a11y/anchor-is-valid': 'off',
     // Why would you want unused vars?
-    "no-unused-declaration": true,
+    'no-unused-declaration': true,
     '@typescript-eslint/no-unused-vars': ['error'],
     // require return types on functions only where useful
     // '@typescript-eslint/explicit-function-return-type': [

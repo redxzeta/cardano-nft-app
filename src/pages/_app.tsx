@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...pageSEO} />
       <MessageProvider>
-       <Yayeet hello={x}/> 
+        <Yayeet hello={x} />
         <Component {...pageProps} />
       </MessageProvider>
     </React.Fragment>
@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp
 
 type wowProps = {
-  hello: string;
+  hello: string
 }
 
-const Yayeet:React.FC<wowProps> =({hello})=><h1>{hello}</h1>
+const Yayeet: React.FC<wowProps> = ({ hello }) => <h1>{hello}</h1>

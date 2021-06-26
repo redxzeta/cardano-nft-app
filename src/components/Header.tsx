@@ -6,7 +6,9 @@ const Header: FunctionComponent = ({
   children: ReactChildren
 }) => {
   return (
-    <header className="mx-auto max-w-7xl sm:px-6 lg:px-8">esad{children}</header>
+    <header className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+      {children}
+    </header>
   )
 }
 
